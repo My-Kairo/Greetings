@@ -1,13 +1,13 @@
-var radioBttnsElement = document.querySelector(".radioBttns");
 var textBoxElement = document.querySelector(".textBoxBttn");
-var greetBttnElement = document.querySelector(".greetBttn");
-var counterElement = document.querySelector(".cnt");
-var resetElement = document.querySelector(".rst");
+var counterElement = document.querySelector(".counter");
+var radioBttnsElement = document.querySelector(".radioBttns");
+var greetBttnElement = document.querySelector(".greetMeBtn");
+var resetElement = document.querySelector(".resetBtn");
 var displaynameElement = document.querySelector(".nameDisplayed")
 
 // a global variable that will keep track of records
 
-var names = [];
+var theNames = [];
 
 if(localStorage['name']){
     var names = JSON.parse(localStorage.getItem('name'))
@@ -22,7 +22,7 @@ resetElement.addEventListener('click', function(){
 });
 
 function buttons(){
-    var radioBttnChecked = document.querySelector("input[name='radioBttns']:checked");
+    var radioBttnChecked = document.querySelector("input[name='language']:checked");
     const regex = /[a-zA-Z]$/g;
 
     if(!radioBttnChecked && textBoxElement.value == ""){

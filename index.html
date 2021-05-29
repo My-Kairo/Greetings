@@ -8,45 +8,51 @@
     <title>Greeting</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Greeting in different languages</h1>
-        <div class="button-1">
-            <input class="greet-1" type="button" name="Greeting" value="Greeting">
-        </div>
+    <div class="box">
+        <h1>Greetings</h1>
         
         <div class="text-box">
-            <form method="POST">
-                Name: 
-                <input class="textBoxBttn" id="text1" type="text" placeholder="type name">
-            </form>
+
+            <div class="error">
+                <p>Enter a name with letters from A-Z</p>
+            </div>
+            
+            <div class="naming">
+                Name
+            </div>
+            <div class="naming">
+                <input class="textBoxBttn" value="" name="text1" type="text" placeholder="type name">
+            </div>
+
+            <div class="naming">
+                <h4>Counter</h4>
+                <span class="counter"></span>
+            </div>
+            
         </div>
 
-        <div class="radio-bttn">
-            <form  action="/action_page.php">
-            <input class="radioBttns" type="radio" id="id1" name="lang" value="English">
-            <label for="lang">English</label><br></input>
-            <input class="radioBttns" type="radio" id="id2" name="lang" value="Sesotho">
-            <label for="lang">Sesotho</label><br></input>
-            <input type="radio" id="id3" name="lang" value="Isixhosa">
-            <label for="lang">Isixhosa</label><br></input>
-            </form>
+        <div class="radios">
+            <label class="">
+                <input class="radioBttns" type="radio" id="id1" name="language" value="English">
+                <span class="labelRadio">English</span>
+            </label>
+            <label class="">
+                <input class="radioBttns" type="radio" id="id2" name="language" value="Sesotho">
+                <span class="labelRadio">Sesotho</span>
+            </label>
+            <label class="">
+                <input class="radioBttns" type="radio" id="id3" name="language" value="Isixhosa">
+                <span class="labelRadio">Isixhosa</span>
+            </label>
         </div>
 
-        <div class="greet-bttn">
-            <form class="greet-form">
-                <input type="submit" value="Greet Me" id="grt" onclick="funct2()">
-            </form>
+        <div class="greet-reset">
+            <button class="primary-bttn greetMeBtn" type="button" name="button"> <span>Greet Me!</span></button>
+            <button class="primary-bttn resetBtn" type="button" name="button"> <span>RESET!</span></button>
         </div>
-        <div class="last-bttns">
-                <input class="cnt" type="button" name="Count" value="Count">
-            <form>
-                <input class="rst" type="reset">
-            </form>
-        </div>
+       
         <div class="display">
-            <span class="nameDisplayed">
-
-            </span>
+            <span class="nameDisplayed"></span>
         </div>
     </div> 
     

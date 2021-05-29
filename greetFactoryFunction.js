@@ -1,24 +1,24 @@
-function Greetings(addingnames){
+function Greetings(){
 
-    var list = addingnames || [];
+    var list = [];
 
     function storingNames(name){
-        var name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-        if(!list.includes(name)){
-            list.push(name);
+        var names = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+        if(!list.includes(names)){
+            list.push(names);
         }else {
             return
         }
     }
 
-    function greet(select, name){
-        name = name.charAt(0).toUpperCase() = name .slice(1).toLowerCase()
+    function greet(select, Name){
+        var naming = Name.charAt(0).toUpperCase() + Name .slice(1).toLowerCase()
         if(select === "English") {
-            return "Hello, " + name;
+            return "Hello, " + naming;
         }else if (select === "Sesotho"){
-            return "Dumela, " + name;
+            return "Dumela, " + naming;
         }else if(select === "Isixhosa"){
-            return "Molo, " + name;
+            return "Molo, " + naming;
         }
     }
 
