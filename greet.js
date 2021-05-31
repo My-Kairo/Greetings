@@ -7,31 +7,32 @@ var displaynameElement = document.querySelector(".nameDisplayed")
 
 // a global variable that will keep track of records
 
-var theNames = [];
+var names = [];
 
-if(localStorage['name']){
+if(localStorage['name']) {
     var names = JSON.parse(localStorage.getItem('name'))
 }
 
-var greetInsta = Greetings(names)
-counterElement.innerHTML = greetInsta.counter();
+let greetInsta = Greetings(names);
+counterElement.innerHTML = greetInsta.theCounter();
 
 resetElement.addEventListener('click', function(){
     localStorage.clear();
     location.reload();
-});
+}
+);
 
 function buttons(){
     var radioBttnChecked = document.querySelector("input[name='language']:checked");
     const regex = /[a-zA-Z]$/g;
 
-    if(!radioBttnChecked && textBoxElement.value == ""){
+    if(!radioBttnChecked && textBoxElement.value === "") {
         displaynameElement.classList.add("red");
-        return displaynameElement.innerHTML = 'Enter name and select language';
+        return displaynameElement.innerHTML = 'Enter name and select language!';
 
     }else if (!radioBttnChecked){
         displaynameElement.classList.add("red");
-        return displaynameElement.innerHTML = 'Select a language';
+        return displaynameElement.innerHTML = 'Select a language!';
     
     }if(textBoxElement.value === ""){
         displaynameElement.classList.add("red");
@@ -44,14 +45,14 @@ function buttons(){
     }
 
     else {
-        greetInsta.storingNames(textBoxElement.value)
+        greetInsta.setnames(textBoxElement.value)
         displaynameElement.classList.remove("red")
 
         displaynameElement.innerHTML = greetInsta.greet(radioBttnChecked.value, textBoxElement.value);
-        counterElement.innerHTML = greetInsta.counter();
+        counterElement.innerHTML = greetInsta.theCounter();
 
         // set names into local storage.
-        let key = greetInsta.getTheNames();
+        let key = greetInsta.getnames();
         localStorage.setItem('name', JSON.stringify(key));
     }
     textBoxElement.value =""
@@ -59,6 +60,6 @@ function buttons(){
     radioBttnChecked = document.getElementById("id2").checked = false
     radioBttnChecked = document.getElementById("id3").checked = false
 }
+
+
 greetBttnElement.addEventListener('click', buttons);
-
-

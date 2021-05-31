@@ -1,40 +1,43 @@
-function Greetings(){
+function Greetings(greetingNames){
 
-    var list = [];
+    var list = greetingNames || [];
+    // var theCounter = 0;
 
-    function storingNames(name){
-        var names = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-        if(!list.includes(names)){
-            list.push(names);
+    function setnames(name){
+        var name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+        if(!list.includes(name)){
+            list.push(name);
         }else {
             return
         }
     }
 
-    function greet(select, Name){
-        var naming = Name.charAt(0).toUpperCase() + Name .slice(1).toLowerCase()
+    function greet(select, name){
+        name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+        
         if(select === "English") {
-            return "Hello, " + naming;
+            return "Hello, " + name;
         }else if (select === "Sesotho"){
-            return "Dumela, " + naming;
+            return "Dumela, " + name;
         }else if(select === "Isixhosa"){
-            return "Molo, " + naming;
+            return "Molo, " + name;
         }
+    
     }
 
     function theCounter(){
         return list.length;
     }
 
-    function getTheNames(){
+    function getnames(){
         return list;
     }
 
     return{
-        storingNames,
         greet,
         theCounter,
-        getTheNames
+        setnames,
+        getnames,
     }
 
 }
